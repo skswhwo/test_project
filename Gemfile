@@ -1,10 +1,9 @@
 source 'https://rubygems.org'
 
+gem 'itunes-receipt'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -12,7 +11,7 @@ gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
+gem 'therubyracer', platforms: :ruby
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -27,15 +26,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'bcrypt', '~> 3.1.7'
 
 # Use Unicorn as the app server
-gem 'unicorn'
+#gem 'unicorn'
 
-# Use Capistrano for deployment
-gem 'capistrano-rails', group: :development
-
-# 추가할 젬
-gem 'capistrano-rails-console'
-gem 'capistrano-rails-collection'
-gem 'capistrano-rails-tail-log'
+gem 'mysql2'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -43,10 +36,12 @@ group :development, :test do
 end
 
 group :development do
-  gem 'capistrano-rbenv'
-  gem 'capistrano-rbenv-install'
-  gem 'capistrano-unicorn-nginx'
-  
+  gem 'capistrano', '~> 3.5.0'
+  gem 'capistrano-rbenv', '~> 2.0.4'
+  gem 'capistrano-rails', '~> 1.1.6'
+  gem 'capistrano-bundler', '~> 1.1.4'
+  gem 'capistrano-foreman', '~> 1.2.0'
+
   gem 'sqlite3'
   
   # Access an IRB console on exception pages or by using <%= console %> in views
@@ -57,6 +52,5 @@ group :development do
 end
 
 group :production do
-  gem 'mysql2'
 end
 

@@ -8,6 +8,7 @@
 # server 'db.example.com', user: 'deploy', roles: %w{db}
 
 
+set :deploy_to, "/home/ec2-user/staging/#{fetch(:application)}"
 
 # role-based syntax
 # ==================
@@ -21,7 +22,8 @@
 # role :web, %w{user1@primary.com user2@additional.com}, other_property: :other_value
 # role :db,  %w{deploy@example.com}
 
-
+role :api, %w{ec2-user@52.78.71.132}
+role :db, %w{ec2-user@52.78.71.132}
 
 # Configuration
 # =============
@@ -59,3 +61,14 @@
 #     auth_methods: %w(publickey password)
 #     # password: 'please use keys'
 #   }
+
+set :pem_key_location, '~/skswhwo07.pem'
+
+server '52.78.71.132',
+  user: 'ec2-user',
+  roles: %w{api},
+  ssh_options: {
+    keys: ["#{fetch(:pem_key_location)}".strip],
+    forward_agent: false,
+    auth_methods: %w(publickey)
+  }

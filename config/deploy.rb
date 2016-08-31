@@ -1,8 +1,8 @@
 # config valid only for current version of Capistrano
 lock '3.5.0'
 
-set :application, 'first'
-set :repo_url, 'git@github.com:skswhwo/test_project.git'
+set :application, 'iap'
+set :repo_url, 'git@github.com:skswhwo/verify-iap-receipt.git'
 set :passenger_restart_with_touch, true 
 
 # rbenv 환경설정

@@ -29,6 +29,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 #gem 'unicorn'
 
 gem 'mysql2'
+gem 'sqlite3'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -41,8 +42,6 @@ group :development do
   gem 'capistrano-rails', '~> 1.1.6'
   gem 'capistrano-bundler', '~> 1.1.4'
   gem 'capistrano-foreman', '~> 1.2.0'
-
-  gem 'sqlite3'
   
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'

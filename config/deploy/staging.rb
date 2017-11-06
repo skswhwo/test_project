@@ -8,7 +8,7 @@
 # server 'db.example.com', user: 'deploy', roles: %w{db}
 
 
-set :deploy_to, "/home/ec2-user/staging/#{fetch(:application)}"
+set :deploy_to, "/home/ubuntu/staging/#{fetch(:application)}"
 
 # role-based syntax
 # ==================
@@ -22,8 +22,8 @@ set :deploy_to, "/home/ec2-user/staging/#{fetch(:application)}"
 # role :web, %w{user1@primary.com user2@additional.com}, other_property: :other_value
 # role :db,  %w{deploy@example.com}
 
-role :api, %w{ec2-user@52.78.71.132}
-role :db, %w{ec2-user@52.78.71.132}
+role :api, %w{ubuntu@52.193.14.135}
+role :db, %w{ubuntu@52.193.14.135}
 
 # Configuration
 # =============
@@ -62,10 +62,10 @@ role :db, %w{ec2-user@52.78.71.132}
 #     # password: 'please use keys'
 #   }
 
-set :pem_key_location, '~/skswhwo07.pem'
+set :pem_key_location, '~/skswhwo171106-kasit.pem'
 
-server '52.78.71.132',
-  user: 'ec2-user',
+server '52.193.14.135',
+  user: 'ubuntu',
   roles: %w{api},
   ssh_options: {
     keys: ["#{fetch(:pem_key_location)}".strip],
